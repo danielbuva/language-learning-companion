@@ -74,7 +74,7 @@ export const recordedClips=[
 ];
 
 export function activityPrompt(activity,concept,topic='',prior=null){
- const focus=topic||concept.topic||'your everyday life',goal=concept.goal||concept.meaning||concept.title;
+ const focus=topic||concept.topic||'your everyday life',goal=(concept.goal||concept.meaning||concept.title).replace(/[.!?]+$/,'');
  switch(activity.id){
  case 'retrieval':return `Without opening an example, express this meaning or accomplish this goal: ${goal}. Context: ${focus}. Try before revealing support.`;
  case 'embedded':return `Tell your tutor something about ${focus}. Work an older expression toward “${goal}” into the exchange naturally.`;
