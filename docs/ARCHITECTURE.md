@@ -42,7 +42,9 @@ The web consent toggle and platform plugin installation are separate layers. An 
 
 ## Native surface
 
-The AppKit menu-bar app uses WKWebView’s persistent cookie store. Microphone permission is granted only to the configured companion origin and only after OS permission. Upload pickers are origin-restricted. Native recording is local until explicitly saved and uploaded; temporary files are removed on cancel/quit. Local notification scheduling uses the active profile’s local time, IANA time zone and pause state. The bridge accepts only main-frame messages from the companion host. Changing servers does not migrate data.
+The AppKit menu-bar app opens the authenticated learning workspace in the system browser, including direct links to knowledge, audio and privacy views. This lets the provider and browser handle passkeys/Touch ID; Google/OpenAI authentication is never embedded and browser session cookies are not captured or copied. All learner information remains in the same server record. The native window provides quick access and local recording/reminder tools, rather than a second learner database.
+
+Native recordings require explicit OS microphone permission and remain local until saved and deliberately uploaded through Listen & speak. Temporary files are removed on cancel/quit. Native reminders are device preferences. The learner can explicitly apply the current web profile schedule through the `kuwento://reminders` link, review the local time/time zone in the app, and pause the Mac independently. Only validated schedule values are accepted; this URI grants no learner-record or account access. Browser reminders follow the web profile while open. A reminder notification opens the same browser workspace. Changing servers does not migrate learning data.
 
 ## Extension points
 

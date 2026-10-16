@@ -46,7 +46,7 @@ export async function handleMcp(request,service,owner){
  if(Array.isArray(rpc)||rpc.jsonrpc!=='2.0')return Response.json({jsonrpc:'2.0',id:rpc.id??null,error:{code:-32600,message:'Invalid JSON-RPC request'}},{status:400});
  if(rpc.method?.startsWith('notifications/'))return new Response(null,{status:202});
  const send=result=>Response.json({jsonrpc:'2.0',id:rpc.id??null,result},{headers:{'Cache-Control':'no-store'}});
- if(rpc.method==='initialize')return send({protocolVersion:'2025-03-26',capabilities:{tools:{listChanged:false}},serverInfo:{name:'Kuwento Language Learning Companion',version:'1.0.0'},instructions:tutorPolicy});
+ if(rpc.method==='initialize')return send({protocolVersion:'2025-03-26',capabilities:{tools:{listChanged:false}},serverInfo:{name:'Kuwento Language Learning Companion',version:'1.0.1'},instructions:tutorPolicy});
  if(rpc.method==='ping')return send({});
  if(rpc.method==='tools/list')return send({tools});
  if(rpc.method!=='tools/call')return Response.json({jsonrpc:'2.0',id:rpc.id??null,error:{code:-32601,message:'Method not found'}});

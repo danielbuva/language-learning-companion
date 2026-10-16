@@ -18,3 +18,5 @@ Only explicitly contributed observations, checkpoints, materials, reflections an
 Linked institutional materials and the two optional Lingua Libre audio samples remain at their sources; selecting remote audio sends a normal media request to Wikimedia. TTS is device-generated and labeled as such. No audio is silently transcribed or sent to an AI provider. No analytics or third-party advertising scripts are included.
 
 Hosting-provider infrastructure backups and browser/native cookie stores are governed by those services; application deletion must not be represented as deleting every outside backup or conversation. The app confirms its own deletion scope. Security reports should avoid posting private learner evidence to public GitHub issues.
+
+The macOS companion uses the system browser for account sign-in and learner views. It does not receive your Google password, passkey, browser cookies or biometric data. Its recorder files and optional notification schedule are local device state. Applying the web reminder schedule to the Mac is explicit and reviewable; pausing Mac reminders is a device override and does not change a language assessment.

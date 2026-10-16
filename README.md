@@ -4,7 +4,7 @@ A persistent, evidence-first Tagalog learning companion. **Teaching stays in Cha
 
 - Web: https://kuwento-language-companion.copperplume66.chatgpt.site
 - ChatGPT: authenticated, consent-gated MCP tools at `/mcp`
-- macOS: native menu-bar app with the shared web experience, microphone access, optional local reminders, downloads, and a native recorder
+- macOS: native menu-bar app with secure browser access to the shared workspace, optional local reminders, and a native recorder
 
 The source is public. The hosted learner workspace starts **owner-private** and requires sign-in. Publishing source does not publish learner records. No learner data, recordings, credentials, or test profiles are committed.
 
@@ -31,7 +31,7 @@ A consent toggle does not prove the ChatGPT connection works: a successful authe
 - Selected-work reviewer links, attributed human feedback, expiry and revocation. Links cannot bypass the hosted Site’s private audience policy; invite Site access separately before using an external reviewer.
 - Inspect/edit/export/delete controls, separate audio downloads, opt-in excerpt/audio retention, consent withdrawal and learning-history recommendation controls.
 
-The companion **captures** free practice and labels it as awaiting review. Your connected conversational tutor or human reviewer assesses actual performance. It does not claim automatic pronunciation scoring, silently transcribe audio, or call a correct translation conversational mastery. Browser notifications work while the page is open; the macOS app can schedule local reminders while the window is closed.
+The companion **captures** free practice and labels it as awaiting review. Your connected conversational tutor or human reviewer assesses actual performance. It does not claim automatic pronunciation scoring, silently transcribe audio, or call a correct translation conversational mastery. Browser notifications work while the page is open; the macOS app can schedule local reminders while its window is closed. Apply the web profile’s schedule with the explicit macOS link in Connect & privacy, or choose a device schedule in the app; pausing on the Mac is a local device override.
 
 ## Run locally
 
@@ -56,7 +56,7 @@ The native result is `macos/dist/Kuwento.app`, with an Apple Silicon ZIP on an A
 
 ## Architecture and hosting
 
-Vinext/React runs on Cloudflare Workers through Sites. D1 owns structured learner records; R2 stores explicitly retained audio. The macOS app uses the same authenticated endpoints and server record through WKWebView. There is no separate native progress database and no required OpenAI API key.
+Vinext/React runs on Cloudflare Workers through Sites. D1 owns structured learner records; R2 stores explicitly retained audio. The macOS app opens the same authenticated workspace in the system browser. Google/OpenAI sign-in and passkeys are never embedded in an app-controlled web view. Its menu bar, recorder and reminder controls are native; no account cookies are copied into the app. There is no separate native progress database and no required OpenAI API key.
 
 Hosted authentication and OAuth are dispatch-owned. Stable Site user IDs scope every learner/profile query; service bypass access alone never supplies a learner identity. The origin must be behind the documented trusted Sites dispatch. **Do not expose this Worker on an arbitrary server that accepts spoofable identity headers.** See [architecture and API](docs/ARCHITECTURE.md), [connection setup](docs/CHATGPT_CONNECTION.md), [privacy](docs/PRIVACY.md), and [acceptance traceability](docs/ACCEPTANCE.md).
 
