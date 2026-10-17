@@ -21,7 +21,7 @@ export const tools=[
 export async function dispatchTool(service,owner,name,args={}){
  if(name==='get_teaching_catalog')return {language:'Tagalog',curriculum,activities,research,resources,recordedClips,tutorPolicy,activityPrompt};
  if(name==='list_learner_profiles')return {profiles:(await service.profiles(owner)).map(p=>({id:p.id,name:p.name,language:p.language,connected:p.settings.connected})),fetchedAt:new Date().toISOString()};
- const p=await service.profile(owner,args.profileId);if(!p.settings.connected)throw new Problem(403,'Connected chat access is disabled for this profile. Enable it in Companion > Connect & privacy.');
+ const p=await service.profile(owner,args.profileId);if(!p.settings.connected)throw new Problem(403,'Connected chat access is disabled for this profile. Enable it in Settings > ChatGPT connection.');
  const id=args.profileId;
  switch(name){
  case 'get_learning_summary':{const summary=await service.summary(owner,id);const connection=await service.confirmConnection(owner,id);return {...summary,connection};}

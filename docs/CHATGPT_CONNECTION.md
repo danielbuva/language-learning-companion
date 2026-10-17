@@ -2,7 +2,7 @@
 
 The hosted Site declares `capabilities: ["mcp"]`. Sites provisions its private plugin and handles platform authentication/OAuth. This is a connected tutoring integration, not unrestricted access to ChatGPT history. There is no claim that every conversation is visible or saved.
 
-1. Open Kuwento. New learners see a four-step onboarding; existing learners can select **Continue setup** on Overview or **Guide me through ChatGPT setup** in Connect & privacy.
+1. Open Kuwento. New learners see a four-step onboarding; existing learners can select **Continue setup** on Overview or **Connect ChatGPT** (or **Review ChatGPT setup**) in Settings → ChatGPT connection.
 2. Save a profile name, practical goals, and optional interests/opportunities. Choose language support, correction timing, self-described experience, and accessibility needs. These are preferences, never observed ability.
 3. Explicitly allow connected tutoring for that profile. Excerpt and recording retention remain separate choices and default off.
 4. Open [ChatGPT Plugins](https://chatgpt.com/plugins) with the same account, find Kuwento in personal plugins, install it, and complete Connect if asked. In a supported chat, type `@` and select Kuwento.
@@ -42,3 +42,7 @@ Official references consulted: [OpenAI MCP server guide](https://developers.open
 A successful authenticated `get_learning_summary` operation stores one idempotent receipt for that profile’s current grant. This is operational metadata, kept apart from evidence and activity counts. Failed summary reads, unauthenticated callers, browser summary exports, imports, and user-supplied settings cannot establish verification. Revoking connected access deletes the receipt and makes setup incomplete but deferred, retaining all learning evidence. Re-enabling access requires a fresh successful summary read. The receipt shows that access worked at the recorded time; it does not guarantee that a plugin remains installed or that later requests cannot fail.
 
 Current connection instructions were checked against the [official custom MCP setup guide](https://developers.openai.com/api/docs/guides/custom-mcp-server).
+
+## Consolidated settings
+
+Settings is the common configuration home for profile/goals, learning support/accessibility/recommendations, ChatGPT access, excerpt/audio retention and human feedback links, reminders/device setup, and data portability/profile management. Learner profile and Listen & speak retain contextual summaries and links to Settings. The old `#view=Connect%20%26%20privacy` link used by existing macOS builds remains supported and opens Settings → ChatGPT connection. Category URLs such as `#view=Settings&section=privacy` are bookmarkable.

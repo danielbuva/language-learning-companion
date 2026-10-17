@@ -12,7 +12,7 @@ The source is public. The hosted learner workspace starts **owner-private** and 
 
 1. Open the web companion and sign in with ChatGPT.
 2. Create a Tagalog profile. A name is enough; goals and interests are optional. All abilities start **Unassessed**.
-3. Choose an activity, or use **Connect & privacy** to enable connected tutoring for this profile.
+3. Choose an activity, or use **Settings → ChatGPT connection** to enable connected tutoring for this profile.
 4. Install/connect the generated Kuwento plugin in **ChatGPT → Plugins → Personal → Created by you**. In a supported chat, ask the tutor to read your learning summary. This is a user-controlled connection step, not automatic monitoring of other chats.
 5. Continue teaching in that chat. The tutor can read context, save selected observations promptly, and checkpoint unfinished work. A second authorized chat reads the same saved record.
 

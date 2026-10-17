@@ -3,7 +3,7 @@
 Date: October 16, 2026.
 
 - TypeScript: `npm run typecheck`.
-- Automated production-code acceptance/security/continuity suite: 32 tests.
+- Automated production-code acceptance/security/continuity suite: 33 tests.
 - Production Worker/web build: `npm run build` / Sites build helper.
 - Local D1 migration applied successfully; schema contains profile/record ownership, foreign keys, scope index and unique deduplication index.
 - Actual local HTTP smoke: sign-in cookie, profile creation, MCP observation and summary, written/audio assessment separation, checkpoint, phrase save, contextual export, duplicate import, consent revocation, and test-profile cleanup passed.
@@ -32,3 +32,10 @@ The corrected native 1.0.1 app was launched, its quick-access controls rendered,
 
 - Production verification: on October 16, 2026 at 18:00 Pacific, the installed connector successfully read the authorized profile. The deployed onboarding displayed its authenticated receipt in the narrow app window. All nine ability dimensions remained unassessed. No learning attempts or proficiency claims were created by this verification.
 - GitHub CI passed both the web/record and macOS build jobs for the onboarding implementation.
+
+## Consolidated Settings update · 2026-10-16
+
+- Renamed Connect & privacy to Settings and grouped all existing profile configuration into six focused sections.
+- Centralized profile/goals/context, language support/correction/accessibility/history, ChatGPT access, excerpt/audio retention and review sharing, reminders/devices, and export/import/profile management.
+- Kept legacy macOS links compatible through URL normalization; test 33 covers the old route, category bookmarks, unknown category fallback, and unrelated route rejection.
+- Local browser QA uses a disposable profile to save goals and learning preferences, inspect retention switches and review controls, and check reminder/data sections. Production learner settings are not changed during this layout verification.
