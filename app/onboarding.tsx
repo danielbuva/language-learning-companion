@@ -14,7 +14,8 @@ export function lessonPrompt(profile:Snapshot){
 }
 export default function Onboarding({snapshot,initialStep,onSaved,onClose}:{snapshot?:Snapshot;initialStep?:number;onSaved:(id:string)=>Promise<void>;onClose:()=>void}){
  const profile=snapshot?.profile,preferences=profile?.settings||{};
- const [step,setStep]=useState(initialStep??preferences.onboarding?.step??(profile?1:0));
+ const requestedStep=initialStep??preferences.onboarding?.step??(profile?1:0);
+ const [step,setStep]=useState(requestedStep===4&&snapshot?.connection?.status!=='verified'?3:requestedStep);
  const [name,setName]=useState(profile?.name||''),[goal,setGoal]=useState(preferences.goals?.join('\n')||'');
  const [topics,setTopics]=useState<string[]>(preferences.topics||[]),[otherTopics,setOtherTopics]=useState('');
  const [opportunities,setOpportunities]=useState(preferences.opportunities||''),[background,setBackground]=useState(preferences.background||'');
@@ -24,6 +25,7 @@ export default function Onboarding({snapshot,initialStep,onSaved,onClose}:{snaps
  useEffect(()=>{heading.current?.focus();window.scrollTo({top:0,behavior:'instant'});},[step]);
  useEffect(()=>{setConnection(snapshot?.connection);},[snapshot?.connection?.status,snapshot?.connection?.verifiedAt]);
  const connected=!!preferences.connected,verified=connection?.status==='verified'&&connected;
+ useEffect(()=>{if(step===4&&connection&&!verified)setStep(3);},[step,connection?.status,verified]);
  const save=async(changes:Snapshot,nextStep=step,completed=false,deferred=false)=>{
   setBusy(true);setError('');setMessage('');
   try{
