@@ -3,7 +3,7 @@
 Date: October 16, 2026.
 
 - TypeScript: `npm run typecheck`.
-- Automated production-code acceptance/security/continuity suite: 33 tests.
+- Automated production-code acceptance/security/continuity suite: 50 tests.
 - Production Worker/web build: `npm run build` / Sites build helper.
 - Local D1 migration applied successfully; schema contains profile/record ownership, foreign keys, scope index and unique deduplication index.
 - Actual local HTTP smoke: sign-in cookie, profile creation, MCP observation and summary, written/audio assessment separation, checkpoint, phrase save, contextual export, duplicate import, consent revocation, and test-profile cleanup passed.
@@ -39,3 +39,12 @@ The corrected native 1.0.1 app was launched, its quick-access controls rendered,
 - Centralized profile/goals/context, language support/correction/accessibility/history, ChatGPT access, excerpt/audio retention and review sharing, reminders/devices, and export/import/profile management.
 - Kept legacy macOS links compatible through URL normalization; test 33 covers the old route, category bookmarks, unknown category fallback, and unrelated route rejection.
 - Local browser QA uses a disposable profile to save goals and learning preferences, inspect retention switches and review controls, and check reminder/data sections. Production learner settings are not changed during this layout verification.
+
+## Authorized tutoring maintenance update · 2026-10-16
+
+- Added requested profile/preference maintenance, a complete tutoring-update workflow, explicit original-evidence reviews, scoped history pagination, and durable read-back verification.
+- Added 17 meaningful workflow/security/evidence tests, including recovery from a partial storage outage and conflicting review decisions with tied timestamps. The exact acceptance phrase completes via the already-existing import tool, without any companion API visit; a separate service instance reads the saved context as another conversation.
+- Covered protected settings, stale revisions, original support/media restrictions, unknown dates, confidence/source boundaries, duplicate and simultaneous retries, partial errors, later deletion/change, consent revocation, corrections, excerpt withdrawal, and new concept visibility.
+- Real local Worker/D1 HTTP smoke passed the same cached-tool workflow: prior evidence import/review, actual test observations, requested goals/preferences, an unfinished checkpoint, duplicate retry, read-back verification and revocation. Every fixture is disposable and local.
+- Added a visible learner history with original provenance, explicit review rationale, requested field changes and per-operation receipts. No production proficiency or language attempts were manufactured to test this feature.
+- Remaining platform boundary: ChatGPT can use only conversations actually available to it, and account/workspace tool approvals still apply. The implementation does not require new companion configuration after the profile's existing connected permission is granted.

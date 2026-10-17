@@ -49,3 +49,13 @@ Native recordings require explicit OS microphone permission and remain local unt
 ## Extension points
 
 Additional languages require their own curriculum, accepted-form rules and educator review. The current API rejects unsupported language creation instead of reusing Tagalog criteria. AI speech/transcription can be added behind explicit consent and reliability metadata; no such external audio processing is hidden in this release. Add schema changes as append-only migrations and extend the acceptance tests for any new assessment claim.
+
+## Tutoring maintenance workflow
+
+`core/tutoring-contract.mjs` defines the typed operations and versioned runtime contract. `core/tutoring.mjs` applies requested profile changes, imports, actual observations, explicit original-evidence reviews, checkpoints and learner corrections. It records `tutor-update`, `profile-change`, and `assessment-review` rows in the existing owner/profile-scoped JSON record store; no database migration is needed. Privacy grants are excluded from the teaching preference allowlist.
+
+Update receipts use a request hash, stable ID, two-minute processing lease, per-step status, and durable record/version references. Identical retries cannot duplicate observations or overwrite a later profile change. Invalid individual steps are reported as partial results; receipts explicitly distinguish a confirmed read-back from an accepted request. This is a resumable workflow, not a promise that every multi-step update is one SQL transaction.
+
+`core/evidence-reviews.mjs` overlays explicit reviews on original evidence without rewriting its provenance. Ordinary imports never activate this overlay. A source-specific original-attempt review is required; known support is preserved, textual evidence cannot establish audio abilities, disputes take precedence, and unknown dates cannot create retention intervals. Review linkage uses the original observation fingerprint so removing permitted excerpts does not erase the underlying evidence judgment. Unknown concepts derive visible knowledge-index entries from saved evidence without assigning ability.
+
+New MCP tools have typed schemas and accurate write/read annotations. The established `import_records` tool also accepts a single authorized tutoring operation envelope; a versioned contract returned by the established summary tool makes the workflow available to clients with cached discovery. REST file imports intentionally do not execute those envelopes. `get_learning_history` supports scoped cursor pagination, and summaries prioritize unfinished checkpoints over later completed sessions.

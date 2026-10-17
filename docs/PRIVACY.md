@@ -4,7 +4,7 @@ The public GitHub repository contains application source, curriculum and tests. 
 
 Default settings: connected chat access off, excerpts off, recordings off, reviewer sharing off, reminders paused. Learning-history recommendations are enabled for the owner’s own record and can be disabled. A profile’s consent settings do not apply to other profiles.
 
-Only explicitly contributed observations, checkpoints, materials, reflections and audio are saved. Full-conversation retention is neither required nor implemented. Outside practice is self-reported; imports remain unverified. A privacy limitation never lowers a language ability score.
+Only explicitly contributed observations, checkpoints, materials, reflections and audio are saved. Full-conversation retention is neither required nor implemented. Outside practice is self-reported; imports start unverified, with any explicit original-evidence review kept separate. A privacy limitation never lowers a language ability score.
 
 - Turning off excerpt retention removes stored evidence response/original-response excerpts in this profile. Tasks, concise feedback and dated evidence metadata remain inspectable; the learner may delete individual observations too.
 - Turning off recording retention deletes this profile’s stored audio objects and attachment records. Unsaved device recordings remain local until discarded or the page is closed.
@@ -26,3 +26,11 @@ The macOS companion uses the system browser for account sign-in and learner view
 The learner can save a name/nickname, goals, interests, practice opportunities, self-described experience, English/Tagalog balance, correction timing, and accessibility preferences. Optional fields can be left blank. These preferences and the resumable setup step belong to the selected profile and are included in its export/deletion scope. They do not establish proficiency. Existing retention and sharing choices are preserved when setup is revisited.
 
 After a successful authenticated MCP learning-summary read, Kuwento stores a per-profile receipt with the operation name and verification time. It contains no conversation text, is excluded from learner evidence and activity counts, and is included in profile export. Withdrawing connected chat access removes this receipt. Imports cannot activate receipts, onboarding completion, or permissions.
+
+## Authorized tutoring updates and explicit reviews
+
+Connected tutoring permission allows selected observations, prior available learning records, requested personal/teaching changes, and lesson checkpoints to be saved from a supported chat. It does not grant unrestricted access to conversation history. The tutor must state what context is actually available. No new companion permission is required for these record-maintenance operations, and the tutor cannot broaden privacy grants, retention, sharing, or reminder settings.
+
+Imported history starts unverified. An explicit review of the available original attempt may contribute to a descriptive assessment while retaining imported origin, source, original support/outcome, date precision, rationale and uncertainty. Unknown dates remain unknown; unreviewed summaries, self-reported success and unavailable/ambiguous audio cannot establish observed ability. Learner confidence remains separate. Withdrawing response retention removes stored response text without automatically discarding an otherwise valid review.
+
+Operation receipts record concise purpose, source scope/limitations, hashes for retry integrity, saved record/version references and any partial errors; they do not retain the submitted batch or a full conversation. Profile-change audit records retain the requested fields before/after and a concise request explanation. Attempts, reviews, corrections and changes remain inspectable in Learning history and included in profile export/deletion scope. ChatGPT may apply its own tool approval policies; Kuwento does not disguise writes as reads or alter those policies.

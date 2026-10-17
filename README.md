@@ -69,3 +69,9 @@ The supplied PRD defines scope. The bootstrap and consolidated technical tutorin
 ## Verification boundaries
 
 Automated tests execute the production domain/API/MCP code against SQLite and an R2-compatible test adapter, with named PRD acceptance scenarios. TypeScript and production builds are checked separately. Browser and deployment verification are recorded in [validation](docs/VALIDATION.md). Live ChatGPT installation/account consent, real microphone permission, human language review, and Apple notarization remain external actions, not fabricated test results.
+
+## ChatGPT can maintain the learner record
+
+After connected tutoring access is granted, say **“Update my Kuwento profile using everything we’ve learned so far.”** ChatGPT can import relevant available history, record actual new attempts, review original historical evidence explicitly, update requested goals/support preferences, checkpoint unfinished lessons, and verify durable saves. It does not require a companion visit or manual import. Cached clients can use the existing tools through the versioned workflow returned in the live summary.
+
+Imported history retains its origin, dates and support. Unknown dates stay unknown. Assessments recompute from eligible evidence and separate explicit reviews; no arbitrary fluency levels are assigned. The learner can inspect and correct the result in Learner profile → Learning history. See [the integration workflow](docs/CHATGPT_CONNECTION.md#authorized-chat-only-profile-maintenance) for permissions, evidence boundaries, partial saves, retries, and tool approvals.
