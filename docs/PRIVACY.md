@@ -20,3 +20,9 @@ Linked institutional materials and the two optional Lingua Libre audio samples r
 Hosting-provider infrastructure backups and browser/native cookie stores are governed by those services; application deletion must not be represented as deleting every outside backup or conversation. The app confirms its own deletion scope. Security reports should avoid posting private learner evidence to public GitHub issues.
 
 The macOS companion uses the system browser for account sign-in and learner views. It does not receive your Google password, passkey, browser cookies or biometric data. Its recorder files and optional notification schedule are local device state. Applying the web reminder schedule to the Mac is explicit and reviewable; pausing Mac reminders is a device override and does not change a language assessment.
+
+## Onboarding and connection status
+
+The learner can save a name/nickname, goals, interests, practice opportunities, self-described experience, English/Tagalog balance, correction timing, and accessibility preferences. Optional fields can be left blank. These preferences and the resumable setup step belong to the selected profile and are included in its export/deletion scope. They do not establish proficiency. Existing retention and sharing choices are preserved when setup is revisited.
+
+After a successful authenticated MCP learning-summary read, Kuwento stores a per-profile receipt with the operation name and verification time. It contains no conversation text, is excluded from learner evidence and activity counts, and is included in profile export. Withdrawing connected chat access removes this receipt. Imports cannot activate receipts, onboarding completion, or permissions.

@@ -22,3 +22,10 @@ The first embedded native sign-in attempt failed at Google’s passkey page befo
 Primary guidance: https://developers.google.com/identity/protocols/oauth2/policies#use-secure-browsers and https://developer.apple.com/documentation/authenticationservices/passkey-use-in-web-browsers.
 
 The corrected native 1.0.1 app was launched, its quick-access controls rendered, and Open my learning workspace was verified to open the real hosted workspace in the user’s default browser (Arc). Actual passkey/Touch ID completion remains for the user to verify in that browser.
+
+## Guided onboarding update · 2026-10-16
+
+- Added four-step, resumable onboarding and an existing-learner setup checklist.
+- Domain tests 28–32 cover saved preferences, no invented assessments, real MCP verification versus permission, completion requirements, revocation/reconnection, owner isolation, and forged/imported receipt rejection.
+- Local browser QA creates a disposable learner profile, saves goals/support/accessibility, reloads at the saved connection step, exercises deferral/resume, observes a loopback MCP receipt, and finishes setup. This loopback QA is not evidence of a production account connection.
+- Connection verification is a dated receipt of a successful summary read, not continuous monitoring of installation or future availability.
